@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "Con Jesus Hoy",
+    "description": "Devocion Matutina para Adultos por Roberto Badenas",
+    "code": "ISBN-9780307474721",
+    "price": 6600,
+    "status": true,
+    "stock": 8,
+    "category": "Devocion Matutina",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Santa Biblia",
+    "description": "Biblia RV.1960 + Himnario",
+    "code": "ISBN-9780307474722",
+    "price": 15000,
+    "status": true,
+    "stock": 34,
+    "category": "Teologia",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Primero Dios",
+    "description": "Revista de 10 Dias de Oracion de editorial ACES",
+    "code": "ISBN-9780307474723",
+    "price": 2000,
+    "status": true,
+    "stock": 116,
+    "category": "Revista",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "La Clave del Cambio",
+    "description": "Libro misionero sobre salud mental por Marcello Niek y Bruno Raso",
+    "code": "ISBN-9780307474724",
+    "price": 2000,
+    "status": true,
+    "stock": 54,
+    "category": "Auto Ayuda",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "El Juicio Investigador: su fundamento biblico",
+    "description": "Libro teologico sobre los fundamentos de la fe por Marvin Moore",
+    "code": "ISBN-9780307474725",
+    "price": 10000,
+    "status": true,
+    "stock": 9,
+    "category": "Teologia",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "La Trampa Digital-Como superar el desafio de la hiperconexion",
+    "description": "Libro sobre la trampa de la conexion constante en el mundo actual por Salete Rios",
+    "code": "ISBN-9780307474726",
+    "price": 4500,
+    "status": true,
+    "stock": 10,
+    "category": "Auto Ayuda",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Predicando desde la tumba",
+    "description": "Una historia de fe en el genocidio de Ruanda por Phodidas Ndamyumugabe",
+    "code": "ISBN-9780156012195",
+    "price": 6500,
+    "status": true,
+    "stock": 15,
+    "category": "Novela",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "La Armadura de Dios",
+    "description": "Un libro para aprender a orar y hablar con Dios como un amigo por Alejandro Bullon",
+    "code": "ISBN-9788420412140",
+    "price": 4600,
+    "status": true,
+    "stock": 8,
+    "category": "Auto ayuda",
+    "thumbnails": [
+      "imagen del libro.jpg"
+    ]
+  }
+]
