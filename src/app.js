@@ -4,7 +4,7 @@ import { createServer } from "http";
 import { engine } from "express-handlebars";
 import path from "path";
 import { fileURLToPath } from "url";
-
+import { connectDB } from "./dao/db.js";
 import productsRouter from "./routes/products.router.js";
 import cartsRouter from "./routes/carts.router.js";
 import viewsRouter from "./routes/views.router.js";
@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const httpServer = createServer(app); // Necesario para Socket.io
+const httpServer = createServer(app);
 const io = new Server(httpServer);
 
 // ---------------- CONFIG. EXPRESS ----------------
@@ -36,29 +36,38 @@ app.use("/api/carts", cartsRouter);
 app.use("/", viewsRouter);
 
 // ---------------- WEBSOCKETS ----------------
-
+// (Por ahora sigue usando JSON local, más adelante podrías pasarlo a Mongo)
 const productManager = new ProductManager("./src/data/products.json");
 
 io.on("connection", async (socket) => {
-    console.log("Cliente conectado");
+    console.log("🟢 Cliente conectado");
 
     socket.emit("updateProducts", await productManager.getProducts());
 
     socket.on("newProduct", async (data) => {
-        await productManager.addProduct(data);
-        io.emit("updateProducts", await productManager.getProducts());
+    await productManager.addProduct(data);
+    io.emit("updateProducts", await productManager.getProducts());
     });
 
     socket.on("deleteProduct", async (id) => {
-        await productManager.deleteProduct(id);
-        io.emit("updateProducts", await productManager.getProducts());
+    await productManager.deleteProduct(id);
+    io.emit("updateProducts", await productManager.getProducts());
     });
 });
 
-// ---------------- SV ----------------
-const PORT = 8080;
-httpServer.listen(PORT, () => {
-    console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+// ---------------- INICIO DEL SERVIDOR ----------------
 
-// Mas adelante lo quiero estilizar con Css
+const PORT = 8080;
+
+const startServer = async () => {
+    try {
+    await connectDB();
+    httpServer.listen(PORT, () => {
+        console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
+    });
+    } catch (err) {
+    console.error("❌ Error iniciando el servidor:", err);
+    }
+};
+
+startServer();

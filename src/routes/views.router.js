@@ -1,18 +1,17 @@
 import { Router } from "express";
-import ProductManager from "../managers/ProductManager.js";
+import { ProductModel } from "../dao/models/product.model.js";
 
 const router = Router();
-const productManager = new ProductManager("./src/data/products.json");
 
-// Vista home
+// Home
 router.get("/", async (req, res) => {
-    const products = await productManager.getProducts();
+    const products = await ProductModel.find().lean();
     res.render("home", { products });
 });
 
-// Vista RT
+// RealTime
 router.get("/realtimeproducts", async (req, res) => {
-    const products = await productManager.getProducts();
+    const products = await ProductModel.find().lean();
     res.render("realTimeProducts", { products });
 });
 
